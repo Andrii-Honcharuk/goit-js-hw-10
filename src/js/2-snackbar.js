@@ -14,6 +14,7 @@ document.querySelector('.form').addEventListener('submit', function (event) {
     } else {
       setTimeout(() => reject(delayValue), delayValue);
     }
+
   });
 
   promise
@@ -24,12 +25,17 @@ document.querySelector('.form').addEventListener('submit', function (event) {
         position: 'topCenter',
       });
     })
-    
+
     .catch((delay) => {
       iziToast.error({
         title: 'Rejected promise',
         message: `❌ Rejected promise in ${delay}ms`,
         position: 'topCenter',
       });
+    })
+
+    //  Clean forms
+    .finally(() => {
+      this.reset();
     });
 });

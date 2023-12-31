@@ -58,7 +58,7 @@ function startTimer(targetDate) {
   }
 
   timerInterval = setInterval(() => {
-    const currentDate = new Date();
+    const currentDate = Date.now();
     const timeDiff = targetDate - currentDate;
 
     if (timeDiff <= 0) {
